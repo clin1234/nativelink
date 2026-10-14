@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@nativelink/config": "workspace:*",
-    "@types/react": "^19.0.0",
+    "@types/react": "^19.3.0",
     "@types/react-dom": "^19.0.0",
     "typescript": "^7.0.0"
   },
