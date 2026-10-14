@@ -6,7 +6,7 @@
     "@mdx-js/react": "^3.1.0",
     "@nativelink/tokens": "workspace:*",
     "@nativelink/ui": "workspace:*",
-    "@next/mdx": "~16.2.11",
+    "@next/mdx": "~16.4.0",
     "@next/third-parties": "~16.2.11",
     "geist": "^1.5.1",
     "marked": "^18.0.0",
