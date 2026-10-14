@@ -21,7 +21,7 @@ jobs:
 
       - name: Run Vale
         uses: >- # Custom commit, last pinned 2024.06.06.
-          errata-ai/vale-action@91ac403e8d26f5aa1b3feaa86ca63065936a85b6
+          errata-ai/vale-action@518a9136acc6e6668ce7c00d367051e0941e87ff
         with:
           filter_mode: file
           reporter: github-pr-check
