@@ -151,8 +151,8 @@ jobs:
           docker/setup-buildx-action@f7ce87c1d6bead3e36075b2ce75da1f6cc28aaca
 
       - name: Build image
-        uses: >- # v6.13.0
-          docker/build-push-action@ca877d9245402d1537745e0e356eab47c3520991
+        uses: >- # v7.4.0
+          docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc
         with:
           context: .
           file: ./deployment-examples/docker-compose/Dockerfile
