@@ -212,6 +212,14 @@ build:asan --@rules_rust//:extra_rustc_flags=-Zsanitizer=address
 # is needed to load the rust toolchains in Bazel
 build:asan --extra_toolchains=@rust_toolchains//:all
 
+# RealtimeSanitizer (x86_64-unknown-linux-gnu).
+# Enable the Linux CI lane by adding rtsan to the sanitizer matrix.
+# Useful checking requires #[sanitize(realtime = "nonblocking")] entry points
+# and #![feature(sanitize)]; enabling this config alone does not define them.
+build:rtsan --config=nightly
+build:rtsan --@rules_rust//:extra_rustc_flags=-Zsanitizer=realtime
+build:rtsan --extra_toolchains=@rust_toolchains//:all
+
 # ThreadSanitizer to detect data races. Tests under tsan shouldn't be cached
 # since they tend to produce irreproducible false negatives.
 build:tsan --config=nightly --config=debug
