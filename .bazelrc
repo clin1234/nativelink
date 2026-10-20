@@ -212,6 +212,13 @@ build:asan --@rules_rust//:extra_rustc_flags=-Zsanitizer=address
 # is needed to load the rust toolchains in Bazel
 build:asan --extra_toolchains=@rust_toolchains//:all
 
+# Standalone LeakSanitizer (x86_64-unknown-linux-gnu).
+# Enable the Linux CI lane by adding lsan to the sanitizer matrix.
+# Unlike MSan/TSan, LSan does not require an instrumented standard library.
+build:lsan --config=nightly
+build:lsan --@rules_rust//:extra_rustc_flags=-Zsanitizer=leak
+build:lsan --extra_toolchains=@rust_toolchains//:all
+
 # ThreadSanitizer to detect data races. Tests under tsan shouldn't be cached
 # since they tend to produce irreproducible false negatives.
 build:tsan --config=nightly --config=debug
